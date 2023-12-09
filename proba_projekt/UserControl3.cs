@@ -80,7 +80,31 @@ namespace proba_projekt
                 }
 
                 vevőkBindingSource.DataSource = context.Vevők.ToList();
+                GetVevő();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Biztosan törölni akarja?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Vevők selectedvevő = (Vevők)listVevők.SelectedItem;
+
+                var törlendő = (from x in context.Vevők
+                                where x.VevőSk == selectedvevő.VevőSk
+                                select x).FirstOrDefault();
+
+                context.Vevők.Remove(törlendő);
+                context.SaveChanges();
+                GetVevő();
+                vevőkBindingSource.DataSource = context.Vevők.ToList();
+            }
+            else
+            {
+                return;
+            }
+            
         }
     }
 }

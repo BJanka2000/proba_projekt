@@ -35,5 +35,13 @@ namespace proba_projekt
             panel1.Controls.Add(us3);
             us3.Dock = DockStyle.Fill;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            UserControl2 us2 = new UserControl2();
+            panel1.Controls.Add(us2);
+            us2.Dock = DockStyle.Fill;
+        }
     }
 }
