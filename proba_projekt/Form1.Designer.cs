@@ -71,14 +71,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Location = new System.Drawing.Point(177, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(926, 508);
+            this.panel1.Size = new System.Drawing.Size(863, 534);
             this.panel1.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 563);
+            this.ClientSize = new System.Drawing.Size(1065, 589);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

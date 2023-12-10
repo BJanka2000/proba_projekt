@@ -94,18 +94,18 @@ namespace proba_projekt
 
         private void listIdőpontok_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Models.Szállítók selectedidőpont = (Models.Szállítók)listIdőpontok.SelectedItem;
+            Models.Szállítók selectedidőpont = (Models.Szállítók)listIdőpontok.SelectedItem;
 
-            //var mennyiség = from x in context.Szállítók
-            //           where x.MegrendelésIdőpontja == selectedidőpont.MegrendelésIdőpontja
-            //           select x.MennyiségSzállító;
-            //var egységár = from x in context.Szállítók
-            //               where x.MegrendelésIdőpontja == selectedidőpont.MegrendelésIdőpontja
-            //               select x.EgységárSzállító;
-            //mennyiség = double.Parse(mennyiség);
+            double mennyiség = (from x in context.Szállítók
+                            where x.MegrendelésIdőpontja == selectedidőpont.MegrendelésIdőpontja
+                            select x.MennyiségSzállító).FirstOrDefault();
+            double egységár = (from x in context.Szállítók
+                           where x.MegrendelésIdőpontja == selectedidőpont.MegrendelésIdőpontja
+                           select x.EgységárSzállító).FirstOrDefault();
+            
 
 
-            //txtFizetés.Text = 
+            txtFizetés.Text = (mennyiség * egységár).ToString();
         }
     }
 }
